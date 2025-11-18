@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>InkRockit - Request Printed Samples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/javascript">
+var submitcount=0;
+
+function checkForm(){
+	var required = new Array('fname','lname','co','street','city','zip','state','email','ref');
+	for (i=0; i < required.length; i++){
+		elem = document.forms[0][required[i]];
+		if (elem.value==""){
+			alert('Your "'+elem.title+'" is required to send.');
+			elem.focus();
+			return false;
+		}
+	}
+	/*for (i=0; i < document.forms[0].length-1; i++){
+		elem = document.forms[0][i];
+		if (elem.value==""){
+			alert('Your "'+elem.title+'" is required to send.');
+			elem.focus();
+		return false;
+		}
+	}*/
+
+   if (submitcount == 0)
+      {
+      submitcount++;
+      return true;
+      }
+   else
+      {
+      alert("This form has already been submitted.  Thanks!");
+      return false;
+      }
+
+}
+
+function checkReference()
+{
+	var adOp = document.getElementById('ref').options;
+	var sel = adOp[adOp.length-1].selected;
+	//var card = adOp[adOp.length-2].selected;
+
+	if (sel == true){
+		//document.getElementById('refOpt').style.backgroundColor = '#FFFFFF';
+		document.getElementById('refOpt').disabled = false;
+		document.getElementById('refOpt').value = "please explain";
+	}else{
+		//document.getElementById('refOpt').style.backgroundColor = '#808080';
+		document.getElementById('refOpt').disabled = true;
+		document.getElementById('refOpt').value = "";
+
+	}
+	/*if (card == true){
+
+		document.getElementById('deckColor').style.backgroundColor = '#FFFFFF';
+		document.getElementById('deckColor').disabled = false;
+	}else{
+		document.getElementById('deckColor').style.backgroundColor = '#808080';
+		document.getElementById('deckColor').disabled = true;
+
+
+	}*/
+}
+
+</script>
+<style>
+body{
+font-family:Arial,Verdana,San-serif;
+color:#000000;
+margin:0;
+/*background-image: url();
+background-repeat: repeat-y;
+background-position: 100% 0%;*/
+background-color:#FFFFFF;
+}
+.txt{
+font-size:10pt;
+font-weight:600;
+}
+</style>
+</head>
+<body ><center>
+<form action="send.php" onSubmit="return checkForm();" method="post" name="request">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0px;">
+<tr>
+  <td colspan="3"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0px;">
+  <td width="33%" bgcolor="#000000" align="left" valign="middle" height="40"><img src="../images/inklogo_sm.jpg" border="0" align="left"></td>
+  <td width="34%" bgcolor="#000000" align="center" valign="middle" height="40"><font color="#FFFFFF"><b>Samples Request Form</b></font></td>
+  <td width="33%" bgcolor="#000000" align="left" valign="middle" height="40">&nbsp;</td></tr>
+  </table>
+  </td>
+</tr>
+<tr><td height="12" colspan="3" valign="top"><hr noshade color="#FF9900" style="margin-top:0;padding-top:0; " /></td></tr>
+<tr><td align="right"> &nbsp; <font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">&nbsp;</font><font class="txt">Company&nbsp;Name:&nbsp;&nbsp;</font></td><td height="23"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0px;"><tr><td width="1"><input type="text" style="width:140;" id="co" name="co" title="Company Name"></td><td align="right" width="100%">&nbsp;&nbsp; <font class="txt">Industry:&nbsp;</font></td><td width="1"><select id="industry" name="industry" style="width:240;" title="Industry">
+    <option></option>
+    <option VALUE="Accounting/Auditing">Accounting/Auditing</option>
+    <option VALUE="Administrative and Support Services">Administrative and Support Services</option>
+    <option VALUE="Advertising/Marketing/PR">Advertising/Marketing/PR</option>
+    <option VALUE="Agriculture, Forestry & Fishing">Agriculture, Forestry & Fishing</option>
+    <option VALUE="Architectural Services">Architectural Services</option>
+    <option VALUE="Arts, Entertainment & Media">Arts, Entertainment & Media</option>
+    <option VALUE="Banking">Banking</option>
+    <option VALUE="Biotechnology & Pharmaceutical">Biotechnology & Pharmaceutical</option>
+    <option VALUE="Community, Social & Nonprofit">Community, Social & Nonprofit</option>
+    <option VALUE="Computers, Hardware">Computers, Hardware</option>
+    <option VALUE="Computers, Software">Computers, Software</option>
+    <option VALUE="Construction, Mining and Trades">Construction, Mining and Trades</option>
+    <option VALUE="Consulting Services">Consulting Services</option>
+    <option VALUE="Customer Service & Call Center">Customer Service & Call Center</option>
+    <option VALUE="Education, Training & Library">Education, Training & Library</option>
+    <option VALUE="Employment Placement Agencies">Employment Placement Agencies</option>
+    <option VALUE="Engineering">Engineering</option>
+    <option VALUE="Finance/Economics">Finance/Economics</option>
+    <option VALUE="Financial Services">Financial Services</option>
+    <option VALUE="Government and Policy">Government and Policy</option>
+    <option VALUE="Graphic Design">Graphic Design</option>
+    <option VALUE="Healthcare, Other">Healthcare, Other</option>
+    <option VALUE="Healthcare, Practitioner & Tech">Healthcare, Practitioner & Tech</option>
+    <option VALUE="Hospitality/Tourism">Hospitality/Tourism</option>
+    <option VALUE="Human Resources">Human Resources</option>
+    <option VALUE="Information Technology">Information Technology</option>
+    <option VALUE="Installation, Maintenance & Rep">Installation, Maintenance & Rep</option>
+    <option VALUE="Insurance">Insurance</option>
+    <option VALUE="Internet/E-Commerce">Internet/E-Commerce</option>
+    <option VALUE="Law Enforcement & Security">Law Enforcement & Security</option>
+    <option VALUE="Legal">Legal</option>
+    <option VALUE="Manufacturing and Production">Manufacturing and Production</option>
+    <option VALUE="Military">Military</option>
+    <option VALUE="Music Industry">Music Industry</option>
+    <option VALUE="Personal Care and Service">Personal Care and Service</option>
+    <option VALUE="Printing and Publishing">Printing and Publishing</option>
+    <option VALUE="Real Estate">Real Estate</option>
+    <option VALUE="Restaurant and Food Service">Restaurant and Food Service</option>
+    <option VALUE="Retail/Wholesale">Retail/Wholesale</option>
+    <option VALUE="Sales">Sales</option>
+    <option VALUE="Science">Science</option>
+    <option VALUE="Sports and Recreation">Sports and Recreation</option>
+    <option VALUE="Telecommunications">Telecommunications</option>
+    <option VALUE="Transportation and Warehousing">Transportation and Warehousing</option>
+    <option VALUE="Other">Other</option>
+  </select></td></tr></table></td><td width="10">&nbsp;</td></tr>
+<tr><td align="right"> &nbsp; <font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">First&nbsp;Name:&nbsp;&nbsp;</font></td><td height="23"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0px;"><tr><td width="1"><input type="text" style="width:140;" id="fname" name="fname" title="First Name"></td><td align="right" width="100%">&nbsp;<font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">Last&nbsp;Name:&nbsp;</font></td><td width="1"><input type="text" style="width:200;" id="lname" name="lname" title="Last Name"></td></tr></table></td><td width="10">&nbsp;</td></tr>
+<tr><td height="22" align="right"><font class="txt">&nbsp;&nbsp;Title/Position:&nbsp;&nbsp;</font></td><td><input type="text" style="width:100%;" id="city" name="position" title="position"></td></tr>
+<tr><td align="right"> &nbsp; <font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">Street&nbsp;Address:&nbsp;&nbsp;</font></td><td height="23"><input type="text" style="width:100%;" id="street" name="street" title="Street Address"></td></tr>
+<tr><td height="22" align="right"> &nbsp; <font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">City:&nbsp;&nbsp;</font></td><td><input type="text" style="width:100%;" id="city" name="city" title="City"></td></tr>
+<tr><td align="right"> &nbsp; <font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">State/Region:&nbsp;&nbsp;</font></td><td height="23"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0px;"><tr><td width="1"><select id="state" name="state" style="width:200;" title="State">
+<option></option>
+<option VALUE="AK">Alaska</option>
+<option VALUE="AL">Alabama</option>
+<option VALUE="AR">Arkansas</option>
+<option VALUE="AZ">Arizona</option>
+<option VALUE="CA">California</option>
+<option VALUE="CO">Colorado</option>
+<option VALUE="CT">Connecticut</option>
+<option VALUE="DC">District Of Columbia</option>
+<option VALUE="DE">Delaware</option>
+<option VALUE="FL">Florida</option>
+<option VALUE="GA">Georgia</option>
+<option VALUE="HI">Hawaii</option>
+<option VALUE="IA">Iowa</option>
+<option VALUE="ID">Idaho</option>
+<option VALUE="IL">Illinois</option>
+<option VALUE="IN">Indiana</option>
+<option VALUE="KS">Kansas</option>
+<option VALUE="KY">Kentucky</option>
+<option VALUE="LA">Louisiana</option>
+<option VALUE="MA">Massachusetts</option>
+<option VALUE="MD">Maryland</option>
+<option VALUE="ME">Maine</option>
+<option VALUE="MI">Michigan</option>
+<option VALUE="MN">Minnesota</option>
+<option VALUE="MO">Missouri</option>
+<option VALUE="MS">Mississippi</option>
+<option VALUE="MT">Montana</option>
+<option VALUE="NC">North Carolina</option>
+<option VALUE="ND">North Dakota</option>
+<option VALUE="NE">Nebraska</option>
+<option VALUE="NH">New Hampshire</option>
+<option VALUE="NJ">New Jersey</option>
+<option VALUE="NM">New Mexico</option>
+<option VALUE="NV">Nevada</option>
+<option VALUE="NY">New York</option>
+<option VALUE="OH">Ohio</option>
+<option VALUE="OK">Oklahoma</option>
+<option VALUE="OR">Oregon</option>
+<option VALUE="PA">Pennsylvania</option>
+<option VALUE="RI">Rhode Island</option>
+<option VALUE="SC">South Carolina</option>
+<option VALUE="SD">South Dakota</option>
+<option VALUE="TN">Tennessee</option>
+<option VALUE="TX">Texas</option>
+<option VALUE="UT">Utah</option>
+<option VALUE="VA">Virginia</option>
+<option VALUE="VT">Vermont</option>
+<option VALUE="WA">Washington</option>
+<option VALUE="WI">Wisconsin</option>
+<option VALUE="WV">West Virginia</option>
+<option VALUE="WY">Wyoming</option>
+<option VALUE="AB">Alberta</option>
+<option VALUE="BC">British Columbia</option>
+<option VALUE="MB">Manitoba</option>
+<option VALUE="NB">New Brunswick</option>
+<option VALUE="NF">Newfoundland</option>
+<option VALUE="NS">Nova Scotia</option>
+<option VALUE="NT">Northwest Territories</option>
+<option VALUE="ON">Ontario</option>
+<option VALUE="PE">Prince Edward Island</option>
+<option VALUE="QC">Quebec</option>
+<option VALUE="SK">Saskatchewan</option>
+<option VALUE="VI">Virgin Islands</option>
+<option VALUE="YT">Yukon Territory</option>
+<option VALUE="AA">AA</option>
+<option VALUE="AE">AE</option>
+<option VALUE="AP">AP</option>
+<option VALUE="PR">Puerto Rico</option>
+<option VALUE="UNK">Outside US/Canada</option>
+</select></td><td width="100%" align="right">&nbsp;<font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">Zip&nbsp;Code:&nbsp;&nbsp;</font></td><td><input type="text" style="width:100;" id="zip" name="zip" title="Zip Code"></td></tr></table></td></tr>
+<tr><td align="right"> &nbsp; <font class="txt">Area&nbsp;Code:&nbsp;&nbsp;</font></td><td height="23"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0px;"><tr><td width="100%"><input type="text" style="width:60;" id="area" name="area" title="Area Code"></td><td width="1" align="right">&nbsp;<font class="txt">Phone&nbsp;Number:</font>&nbsp;</td><td width="1" align="right"><input type="text" style="width:200;" id="phone" name="phone" title="Phone Number"></td></tr></table></td></tr>
+<tr><td align="right"> &nbsp; <font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">&nbsp;</font><font class="txt">E-mail:&nbsp;&nbsp;</font></td><td height="23"><input type="text" style="width:100%;" id="Email" name="email" title="E-Mail Address"></td></tr>
+<tr><td>&nbsp;  </td><td height="23"><font size="-1" color="#FF9900"><b>No personal information will be used for marketing purposes.</b></font>
+</td></tr>
+<tr><td colspan="2"><font class="txt">&nbsp;&nbsp;Which Operating System do you use? &nbsp; Windows<input type="radio" name="os" value="Windows" title="Operating System" > &nbsp;&nbsp;
+Macintosh<input type="radio" name="os" value="Macintosh" title="Operating System" > &nbsp;&nbsp;
+Other<input type="radio" name="os" value="Other" title="Operating System" > </font> </td></tr>
+
+<tr><td colspan="2"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td width="260"><font class="txt">&nbsp;&nbsp;Which&nbsp;graphics&nbsp;program&nbsp;do&nbsp;you&nbsp;use?&nbsp;</font></td><td align="right">
+<input type="text" style="width:300;" name="app" id="app" title="Graphics Program">
+</td></tr></table>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td width="260" ><font class="txt">&nbsp; <font size="-1" color="#FF9900"><b>*</b></font>&nbsp;<font class="txt">&nbsp;</font><font class="txt"></font>How&nbsp;did&nbsp;you&nbsp;hear&nbsp;about&nbsp;us?&nbsp;</font></td><td align="left" width="1"><select id="ref" name="ref" style="width:200;" title="Reference Source">
+<option></option>
+<option value="search engine - google">Search Engine - Google</option>
+<option value="search engine - msn">Search Engine - MSN</option>
+<option value="search engine - yahoo">Search Engine - Yahoo</option>
+<option value="search engine - other">Search Engine - Other</option>
+<option value="card deck black">Card Deck - Black Background</option>
+<option value="card deck white">Card Deck - White Background</option>
+<option value="Friend">Friend</option>
+<option value="Radio">Radio</option>
+<option value="Newspaper">Newspaper</option>
+<option value="Trade Publication">Trade Publication</option>
+<option value="other">Other</option>
+</select></td><td><input id="refOpt" name="refOpt" size="21" maxlength="40" style="width:100%;" type="text" value="" disabled="disabled" >
+</td></tr>
+</table></td></tr>
+
+<tr><td>&nbsp;  </td><td height="14"> </td></tr>
+<tr><td colspan="2" align="right" valign="middle" ><table cellpadding="0" cellspacing="0" border="0"><tr><td><font size="-1" color="#FF9900"><b>Required Fields Denoted by *</b></font> &nbsp; </td><td><input type="image" src="img/submit.gif" value="SEND" ></td></tr></table></td></tr>
+</table>
+</form></center>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 37</title>
+    <g id="InkRockit_Photoframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="InkRockit_Photoframe-2560" transform="translate(-1406.000000, -1448.000000)">
+            <g id="Group-61" transform="translate(0.000000, 7.000000)">
+                <g id="Group-40" transform="translate(0.000000, 1064.000000)">
+                    <g id="Group-38" transform="translate(780.000000, 100.000000)">
+                        <g id="Group-37" transform="translate(626.000000, 277.000000)">
+                            <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="120" height="120"></rect>
+                            <g id="Group-23" transform="translate(8.400000, 6.000000)">
+                                <polyline id="Path" fill="#000000" transform="translate(20.342504, 41.126386) scale(1, -1) rotate(90.000000) translate(-20.342504, -41.126386) " points="22.6329527 21.572261 61.3314499 21.572261 60.8349058 60.6805113 -20.6464418 60.6805113 -11.9402895 57.018109 -7.98981157 53.3663426"></polyline>
+                                <polyline id="Path" stroke="#000000" stroke-width="1.44" transform="translate(51.574003, 54.207434) rotate(-44.000000) translate(-51.574003, -54.207434) " points="9.7088341 34.9804678 9.74069912 34.9804678 9.74069912 34.9804678 93.4391712 34.9804678 93.4391712 73.4344004 55.7560694 73.4344004"></polyline>
+                                <path d="M20.6039267,65.2294229 L104.334264,65.2294229 L104.334264,65.2294229 L104.334264,103.683356 L20.6039267,103.683356 C9.98516641,103.683356 1.37696039,95.0751495 1.37696039,84.4563892 C1.37696039,73.837629 9.98516641,65.2294229 20.6039267,65.2294229 Z" id="Rectangle" stroke="#000000" stroke-width="1.44"></path>
+                                <circle id="Oval" stroke="#000000" stroke-width="1.44" cx="15.6421289" cy="84.4563892" r="4.34157303"></circle>
+                                <line x1="86.0412687" y1="65.2294229" x2="86.0412687" y2="103.683356" id="Path-11" stroke="#000000" stroke-width="1.2"></line>
+                                <line x1="68.6749765" y1="65.2294229" x2="68.6749765" y2="103.683356" id="Path-11" stroke="#000000" stroke-width="1.2"></line>
+                                <line x1="51.3086844" y1="65.2294229" x2="51.3086844" y2="103.683356" id="Path-11" stroke="#000000" stroke-width="1.2"></line>
+                                <line x1="55.1128695" y1="23.5685393" x2="81.8252156" y2="51.2299835" id="Path-11" stroke="#000000" stroke-width="1.2"></line>
+                                <line x1="41.3801549" y1="36.872629" x2="68.0925011" y2="64.5340731" id="Path-11" stroke="#000000" stroke-width="1.2"></line>
+                                <line x1="26.4947617" y1="50.5175728" x2="40.7579065" y2="65.2874916" id="Path-11" stroke="#000000" stroke-width="1.2"></line>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

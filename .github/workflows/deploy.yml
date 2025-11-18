@@ -1,0 +1,187 @@
+name: Deploy to DigitalOcean
+
+# This workflow deploys the inkrockit.com artifact repository to the production server
+# MANUAL TRIGGER ONLY - No automatic deployments to production
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
+        type: choice
+        options:
+          - main
+          - staging
+      skip_backup:
+        description: 'Skip backup before deployment'
+        required: false
+        default: false
+        type: boolean
+
+# Prevent concurrent deployments
+concurrency:
+  group: production-deployment
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to Production Server
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+      url: https://inkrockit.com
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0  # Full history for better debugging
+
+      - name: Verify deployment branch
+        run: |
+          echo "Deploying branch: ${{ github.event.inputs.branch }}"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Triggered by: ${{ github.actor }}"
+          git log -1 --pretty=format:"%h - %an: %s"
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DO_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H ${{ secrets.DO_SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Test SSH connection
+        run: |
+          ssh -i ~/.ssh/deploy_key \
+            -o StrictHostKeyChecking=no \
+            ${{ secrets.DO_SSH_USER }}@${{ secrets.DO_SSH_HOST }} \
+            "echo 'SSH connection successful' && whoami && hostname"
+
+      - name: Create deployment backup (unless skipped)
+        if: ${{ !inputs.skip_backup }}
+        run: |
+          echo "Creating backup of current deployment..."
+          ssh -i ~/.ssh/deploy_key \
+            ${{ secrets.DO_SSH_USER }}@${{ secrets.DO_SSH_HOST }} << 'ENDSSH'
+            BACKUP_DIR="/opt/deploy/inkrockit/backups"
+            BACKUP_NAME="backup-$(date +%Y%m%d-%H%M%S).tar.gz"
+
+            mkdir -p "$BACKUP_DIR"
+
+            cd /var/www
+            tar czf "$BACKUP_DIR/$BACKUP_NAME" \
+              --exclude='*.log' \
+              --exclude='cache/*' \
+              --exclude='tmp/*' \
+              inkrockit.com/
+
+            echo "Backup created: $BACKUP_DIR/$BACKUP_NAME"
+            ls -lh "$BACKUP_DIR/$BACKUP_NAME"
+
+            # Keep only last 5 backups
+            cd "$BACKUP_DIR"
+            ls -t backup-*.tar.gz | tail -n +6 | xargs -r rm
+            echo "Retained backups:"
+            ls -lh backup-*.tar.gz
+          ENDSSH
+
+      - name: Run deployment script
+        run: |
+          echo "Executing deployment on production server..."
+          ssh -i ~/.ssh/deploy_key \
+            ${{ secrets.DO_SSH_USER }}@${{ secrets.DO_SSH_HOST }} \
+            "bash /opt/deploy/inkrockit/deploy.sh ${{ github.event.inputs.branch }}"
+
+      - name: Verify deployment
+        run: |
+          echo "Verifying deployment..."
+
+          # Check if site is responding
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://inkrockit.com)
+          echo "Site HTTP status: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "✅ Site is responding successfully"
+          else
+            echo "⚠️  Warning: Site returned status $HTTP_STATUS"
+            exit 1
+          fi
+
+          # Check Nginx status
+          ssh -i ~/.ssh/deploy_key \
+            ${{ secrets.DO_SSH_USER }}@${{ secrets.DO_SSH_HOST }} \
+            "systemctl is-active nginx && echo '✅ Nginx is running'"
+
+          # Check PHP-FPM status
+          ssh -i ~/.ssh/deploy_key \
+            ${{ secrets.DO_SSH_USER }}@${{ secrets.DO_SSH_HOST }} \
+            "systemctl is-active php8.3-fpm && echo '✅ PHP-FPM is running'"
+
+      - name: Cleanup SSH keys
+        if: always()
+        run: |
+          rm -f ~/.ssh/deploy_key
+
+      - name: Deployment summary
+        if: success()
+        run: |
+          echo "============================================"
+          echo "✅ DEPLOYMENT SUCCESSFUL"
+          echo "============================================"
+          echo "Branch: ${{ github.event.inputs.branch }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Deployed by: ${{ github.actor }}"
+          echo "Deployed at: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          echo "Site URL: https://inkrockit.com"
+          echo "============================================"
+
+      - name: Deployment failure notice
+        if: failure()
+        run: |
+          echo "============================================"
+          echo "❌ DEPLOYMENT FAILED"
+          echo "============================================"
+          echo "Check the logs above for error details"
+          echo "To rollback, restore from backup on server:"
+          echo "ssh kb-final '/opt/deploy/inkrockit/rollback.sh'"
+          echo "============================================"
+
+# ============================================
+# Required GitHub Secrets
+# ============================================
+# Configure these in: Settings > Secrets and variables > Actions
+#
+# DO_SSH_HOST         : 67.205.161.183
+# DO_SSH_USER         : root
+# DO_SSH_KEY          : Contents of ~/.ssh/kb_final_droplet private key
+# DO_APP_PATH         : /var/www/inkrockit.com
+#
+# ============================================
+# How to Use This Workflow
+# ============================================
+# 1. Go to Actions tab in GitHub
+# 2. Select "Deploy to DigitalOcean"
+# 3. Click "Run workflow"
+# 4. Select branch to deploy (usually 'main')
+# 5. Optionally skip backup for faster deployment
+# 6. Click "Run workflow" button
+# 7. Monitor deployment progress in real-time
+# 8. Check site at https://inkrockit.com
+#
+# ============================================
+# Troubleshooting
+# ============================================
+# If deployment fails:
+# 1. Check the workflow logs for specific errors
+# 2. Verify GitHub secrets are configured correctly
+# 3. Test SSH connection manually: ssh kb-final
+# 4. Check deployment script: ssh kb-final "cat /opt/deploy/inkrockit/deploy.sh"
+# 5. Restore from backup if needed
+#
+# To rollback a failed deployment:
+# ssh kb-final "/opt/deploy/inkrockit/rollback.sh"

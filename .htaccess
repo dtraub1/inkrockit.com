@@ -1,0 +1,8 @@
+AddHandler php5-script .php
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /index\.html? [NC]
+RewriteRule ^(.*/)?index\.html?$ /$1 [R=301,L]
+RewriteCond %{THE_REQUEST} /index\.php? [NC]
+RewriteRule ^(.*/)?index\.php?$ /$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^inkrockit.com [NC]
+#RewriteRule ^(.*)$ https://www.inkrockit.com/$1 [L,R=301,NC]

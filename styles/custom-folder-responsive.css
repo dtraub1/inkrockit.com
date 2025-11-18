@@ -1,0 +1,289 @@
+.small-img {
+  display: none;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (max-width: 1100px) {
+  * {
+    box-sizing: border-box;
+  }
+  td[rowspan="8"],
+  td[rowspan="7"] {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  table {
+    width: 100%;
+    max-width: 100%;
+  }
+  tr,
+  a {
+    text-align: center;
+  }
+  a {
+    display: block;
+  }
+  img {
+    display: inline-block;
+    max-width: 100%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .big-img {
+    display: none;
+  }
+  .small-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .small-img + .small-img {
+    margin-top: 5px;
+  }
+  .small-wide {
+    display: block;
+    width: 100%;
+  }
+  .small-wide img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  img[src="ink_dreams/images/custom_headline.jpg"],
+  img[src="ink_dreams/images/ink_dreams_08.gif"],
+  img[src="ink_dreams/images/in_the_know.jpg"] {
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media all and (max-width: 1020px) {
+  .fancybox-opened {
+    width: 700px !important;
+  }
+}
+
+.trust-back {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e1e1e1;
+  padding: 15px 0;
+  margin: 0;
+  width: 1000px;
+}
+
+.trust-back img {
+  width: 100%;
+  max-width: 50%;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+}
+
+.trust-back .mid,
+.trust-back .sml {
+  display: none;
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.landingTopPhone .click,
+.landingTopPhone .num {
+  display: none;
+}
+
+.tr-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tr-review-wrap {
+  padding: 15px 15px 0 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #e1e1e1;
+}
+
+.tr-review {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tr-review img {
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.big {
+  max-width: 50%;
+}
+
+.trust-back .big:nth-child(3) {
+  display: none;
+}
+
+.big + .big {
+  margin-left: 15px;
+}
+
+.tr-review img.mid,
+.tr-review img.sml {
+  display: none;
+}
+
+@media all and (max-width: 1020px) {
+  .tr-review,
+  .trust-back {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .trust-back {
+    flex-wrap: wrap;
+    padding: 0 0 10px 0;
+  }
+  .trust-back img {
+    max-width: 100%;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .trust-back img + img {
+    margin-top: 10px;
+  }
+  .tr-review img {
+    width: 600px;
+  }
+  .big + .big {
+    margin-left: auto;
+  }
+  .tr-wrap {
+    display: grid;
+    border-radius: 0;
+  }
+  .tr-review {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    order: 2;
+  }
+  .tr-review-wrap {
+    display: grid;
+    padding: 15px;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .landingTopPhone .click,
+  .landingTopPhone .num {
+    display: block;
+  }
+  .landingTopPhone {
+    margin-top: 15px;
+    margin-left: auto;
+  }
+  .landingTopPhone a {
+    text-decoration: none;
+  }
+  .landingTopPhone .click {
+    background: #519303 url(../image/buttonBgMod.png) repeat-x;
+    background-size: 43px 210%;
+    border: medium none;
+    border-radius: 7px 7px 7px 7px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+  .landingTopPhone .num {
+    color: #0058b5;
+    font-weight: 700;
+    font-size: 54px;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+  .landingTopPhone img {
+    display: none;
+  }
+}
+
+@media all and (max-width: 630px) {
+  .trust-back img,
+  .tr-review,
+  .tr-review img,
+  .tr-review {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .trust-back .big {
+    display: none;
+  }
+  .trust-back .mid {
+    display: block;
+  }
+  .mainFooterBorder {
+    display: none;
+  }
+  .tr-review img.big {
+    display: none;
+  }
+  .tr-review img.mid {
+    display: block;
+  }
+  .tr-review-wrap {
+    padding-top: 5px;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .landingTopPhone {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+  .landingTopPhone .click {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .landingTopPhone .num {
+    font-size: 40px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .trust-back .big,
+  .trust-back .mid {
+    display: none;
+  }
+  .trust-back .sml {
+    display: block;
+  }
+}

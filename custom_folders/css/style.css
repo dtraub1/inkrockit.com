@@ -1,0 +1,8 @@
+.landingLeft{
+    position: relative;
+}
+.landingImg{
+    position: absolute;
+    left: 0;
+    top: 140px;
+}

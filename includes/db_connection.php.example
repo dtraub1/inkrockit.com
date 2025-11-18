@@ -1,0 +1,14 @@
+<SCRIPT language="php">
+
+// Database Configuration Template
+// Copy this file to db_connection.php and update with your actual credentials
+
+$db_username = "YOUR_DATABASE_USERNAME";
+$db_password = "YOUR_DATABASE_PASSWORD";
+$db_name = "YOUR_DATABASE_NAME";
+$db_host = "localhost"; // or your database host
+
+$dbh=mysql_connect($db_host, $db_username, $db_password) or die ('I cannot connect to the database because: ' . mysql_error());
+mysql_select_db($db_name);
+
+</SCRIPT>

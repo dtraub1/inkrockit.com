@@ -1,0 +1,601 @@
+<gallery
+base = ""
+background = "#FFFFFF"
+banner = "#F0F0F0"
+text = "#000000"
+link = "#0000FF"
+alink = "#FF0000"
+vlink = "#800080"
+date = "2/7/11">
+	<sitename>Adobe Web Photo Gallery</sitename>
+	<photographer></photographer>
+	<contactinfo></contactinfo>
+	<email>dtraub@inkrockit.com</email>
+	<security><![CDATA[]]> </security>
+
+<banner font = "Helvetica" fontsize = "3" color =  "#F0F0F0"> </banner>
+<thumbnail base ="thumbnails/" font = "Helvetica" fontsize = "4" color = "#F0F0F0" border = "0" rows = "3" col = "5"> </thumbnail> 
+<large base ="images/" font = "Helvetica" fontsize = "3" color = "#F0F0F0" border = "0"> </large>
+<images id = "images">
+
+<image
+path = "Armelle leading.jpg"
+width = "350"
+height = "262"
+thumbpath = "Armelle leading.jpg"
+thumbwidth = "75"
+thumbheight = "56">
+</image>
+
+
+<image
+path = "Best View Lucas.jpg"
+width = "350"
+height = "233"
+thumbpath = "Best View Lucas.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "Bishops Ranch Kim panel .jpg"
+width = "187"
+height = "350"
+thumbpath = "Bishops Ranch Kim panel .jpg"
+thumbwidth = "40"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "Blohm 12.jpg"
+width = "350"
+height = "158"
+thumbpath = "Blohm 12.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "Blohm 2.jpg"
+width = "350"
+height = "158"
+thumbpath = "Blohm 2.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "Blohm 4.jpg"
+width = "350"
+height = "158"
+thumbpath = "Blohm 4.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "Christ Science.jpg"
+width = "350"
+height = "177"
+thumbpath = "Christ Science.jpg"
+thumbwidth = "75"
+thumbheight = "38">
+</image>
+
+
+<image
+path = "Courtroom A 1.jpg"
+width = "350"
+height = "158"
+thumbpath = "Courtroom A 1.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "Courtroom-A-2.jpg"
+width = "350"
+height = "158"
+thumbpath = "Courtroom-A-2.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "Dragge01.jpg"
+width = "279"
+height = "350"
+thumbpath = "Dragge01.jpg"
+thumbwidth = "59"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "FULL WINDOW ADJUST.jpg"
+width = "201"
+height = "350"
+thumbpath = "FULL WINDOW ADJUST.jpg"
+thumbwidth = "43"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "Grand StairDome.jpg"
+width = "350"
+height = "233"
+thumbpath = "Grand StairDome.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "Guadalupe.jpg"
+width = "233"
+height = "350"
+thumbpath = "Guadalupe.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "Guadalupe_CloseUp.jpg"
+width = "350"
+height = "158"
+thumbpath = "Guadalupe_CloseUp.jpg"
+thumbwidth = "75"
+thumbheight = "33">
+</image>
+
+
+<image
+path = "Hibernia Bank.jpg"
+width = "350"
+height = "233"
+thumbpath = "Hibernia Bank.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "Hibernia Oval 5.jpg"
+width = "350"
+height = "158"
+thumbpath = "Hibernia Oval 5.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "IMG0005.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0005.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0006.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0006.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0011.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0011.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0016.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0016.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0018.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0018.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0019.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0019.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0022.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0022.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0032.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0032.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0036.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0036.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0037.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0037.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0038.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0038.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0039.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0039.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0049.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0049.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0055.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0055.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0056.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0056.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0057.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0057.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0063.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0063.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0068.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0068.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0071.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0071.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0076.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0076.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0077.jpg"
+width = "209"
+height = "350"
+thumbpath = "IMG0077.jpg"
+thumbwidth = "44"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0080.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0080.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0080_full.jpg"
+width = "233"
+height = "350"
+thumbpath = "IMG0080_full.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "IMG0081.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0081.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0084.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0084.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0085.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0085.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "IMG0094.jpg"
+width = "350"
+height = "233"
+thumbpath = "IMG0094.jpg"
+thumbwidth = "75"
+thumbheight = "50">
+</image>
+
+
+<image
+path = "Jiang glass.jpg"
+width = "350"
+height = "158"
+thumbpath = "Jiang glass.jpg"
+thumbwidth = "75"
+thumbheight = "33">
+</image>
+
+
+<image
+path = "Library & Book.jpg"
+width = "243"
+height = "350"
+thumbpath = "Library & Book.jpg"
+thumbwidth = "52"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "PB300009.jpg"
+width = "350"
+height = "262"
+thumbpath = "PB300009.jpg"
+thumbwidth = "75"
+thumbheight = "56">
+</image>
+
+
+<image
+path = "Pasco 6.jpg"
+width = "350"
+height = "158"
+thumbpath = "Pasco 6.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "Pasco_Reinstallation.jpg"
+width = "350"
+height = "262"
+thumbpath = "Pasco_Reinstallation.jpg"
+thumbwidth = "75"
+thumbheight = "56">
+</image>
+
+
+<image
+path = "Rimokh.jpg"
+width = "350"
+height = "158"
+thumbpath = "Rimokh.jpg"
+thumbwidth = "75"
+thumbheight = "33">
+</image>
+
+
+<image
+path = "SOLDERING CONNIE.jpg"
+width = "350"
+height = "262"
+thumbpath = "SOLDERING CONNIE.jpg"
+thumbwidth = "75"
+thumbheight = "56">
+</image>
+
+
+<image
+path = "San Mateo County Courthouse.jpg"
+width = "287"
+height = "350"
+thumbpath = "San Mateo County Courthouse.jpg"
+thumbwidth = "61"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "San Mateo silhouette.jpg"
+width = "350"
+height = "158"
+thumbpath = "San Mateo silhouette.jpg"
+thumbwidth = "75"
+thumbheight = "33">
+</image>
+
+
+<image
+path = "Sheraton Monkeys.jpg"
+width = "350"
+height = "158"
+thumbpath = "Sheraton Monkeys.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "St James 1.jpg"
+width = "350"
+height = "158"
+thumbpath = "St James 1.jpg"
+thumbwidth = "75"
+thumbheight = "34">
+</image>
+
+
+<image
+path = "St Thomas_Great Stars.jpg"
+width = "350"
+height = "262"
+thumbpath = "St Thomas_Great Stars.jpg"
+thumbwidth = "75"
+thumbheight = "56">
+</image>
+
+
+<image
+path = "Unitarian - Derrick.jpg"
+width = "350"
+height = "158"
+thumbpath = "Unitarian - Derrick.jpg"
+thumbwidth = "75"
+thumbheight = "33">
+</image>
+
+
+<image
+path = "bathroom Union St adj.jpg"
+width = "220"
+height = "350"
+thumbpath = "bathroom Union St adj.jpg"
+thumbwidth = "47"
+thumbheight = "75">
+</image>
+
+
+<image
+path = "ss IMG0081.jpg"
+width = "233"
+height = "350"
+thumbpath = "ss IMG0081.jpg"
+thumbwidth = "50"
+thumbheight = "75">
+</image>
+
+</images>
+</gallery>

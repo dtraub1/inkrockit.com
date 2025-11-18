@@ -1,0 +1,139 @@
+# InkRockit.com - Artifact-Only Static Site Repository
+# This repo contains compiled/deployed files, not source code
+
+# ============================================
+# Secrets & Credentials
+# ============================================
+credentials.json
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+
+# Database credentials will be externalized
+includes/db_connection.php
+# Keep the template:
+!includes/db_connection.php.example
+
+# ============================================
+# macOS & System Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon?
+
+# ============================================
+# Editor & IDE
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-*
+
+# ============================================
+# Logs & Temporary Files
+# ============================================
+*.log
+*.tmp
+*.temp
+*.cache
+error_log
+access_log
+
+# ============================================
+# PHP Legacy Components (Keep for Reference)
+# ============================================
+# Note: Keeping legacy PHP files as they're part of the deployment
+# but excluding their generated/cache content
+
+# PHP uploads and cache
+*/cache/*
+*/tmp/*
+*/temp/*
+
+# ============================================
+# Backup & Archive Files
+# ============================================
+*.bak
+*.backup
+*.old
+*~
+*.orig
+
+# Keep specific old files that might be documentation
+!README.old
+!NOTES.old
+
+# ============================================
+# Large Media (Excluded from Git, but kept locally)
+# ============================================
+# These directories are downloaded locally but NOT pushed to GitHub
+# Total: ~2.8GB of user uploads, leads, and old media
+
+# User uploads directory - 2.3GB
+/upload/
+
+# Lead capture data - 275MB
+/leads/
+
+# Old proof files - 138MB
+/proofs/
+
+# Old project files - 49MB
+/silestone/
+
+# Landing pages - 43MB (keeping for now, uncomment to exclude)
+# /lp/
+
+# Legacy osCommerce - 25MB
+/oscatalog/
+
+# Legacy phpCollab - 6.5MB
+/phpCollab/
+
+# Old samples - keep these as they may be needed for display
+# /samples/
+# /old_samples/
+# /old_proofs/
+
+# ============================================
+# Git & Version Control
+# ============================================
+*.orig
+*.rej
+
+# ============================================
+# Server-Specific Files (Not in Repo)
+# ============================================
+# Nginx configs are documented but not stored here
+/etc/
+/var/log/
+
+# ============================================
+# Development & Build (Not Applicable)
+# ============================================
+# Note: This repo has NO source code or build tools
+# These are listed for future reference if source is recovered
+node_modules/
+.nuxt/
+dist/
+.cache/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ============================================
+# Security & Testing
+# ============================================
+/tests/
+/test/
+phpunit.xml
+.phpunit.result.cache

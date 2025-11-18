@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Flp\u002Fphoto_frame\u002F_nuxt\u002Fstatic\u002F1634746935",layout:"main",error:a,serverRendered:true,routePath:"\u002Fform",config:{_app:{basePath:"\u002Flp\u002Fphoto_frame\u002F",assetsPath:"\u002Flp\u002Fphoto_frame\u002F_nuxt\u002F",cdnURL:a}}}}(null));

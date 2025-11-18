@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Sample LinkPoint Connect Order Form</title>
+</head>
+<body>
+<h1>Order Form</h1>
+<p>Your order total is: $13.99.</p>
+<FORM
+action="https://www.linkpointcentral.com/lpc/servlet/lppay"
+method="post">
+<input type="hidden" name="storename"
+value="1909649884">
+<INPUT type="hidden" name="chargetotal" value="13.99">
+<input type="hidden" name="txnorg" value="eci">
+<input type="hidden" name="mode" value="payplus">
+<input type="hidden" name="txntype" value="sale">
+Address (1st line): <input type="text" name="baddr1" size="30"
+maxlength="30"><br>
+Zip code: <input type="text" name="bzip" size="5" maxlength="10"> <br><br>
+<INPUT type="submit" value="Continue to secure payment
+form"> </Form>
+</body>
+</html>

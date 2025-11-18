@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"lp\u002Fcustom_print\u002F_nuxt\u002Fstatic\u002F1635946185",layout:"main",error:a,serverRendered:true,routePath:"\u002Fform",config:{_app:{basePath:"lp\u002Fcustom_print\u002F",assetsPath:"lp\u002Fcustom_print\u002F_nuxt\u002F",cdnURL:a}}}}(null));

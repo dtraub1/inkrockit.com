@@ -1,0 +1,87 @@
+<?php
+/**
+ * Database Connection Configuration Template
+ *
+ * This file is a TEMPLATE showing the structure of the database configuration
+ * used by legacy PHP files in the inkrockit.com deployment.
+ *
+ * IMPORTANT NOTES:
+ * - The main Nuxt.js static site does NOT use this database configuration
+ * - This is only for legacy PHP components (osCommerce, custom scripts)
+ * - The referenced database does NOT currently exist on the server
+ * - These legacy components are NOT actively used for the main site
+ *
+ * Location on server: /var/www/inkrockit.com/includes/db_connection.php
+ *
+ * DO NOT commit the actual credentials to Git!
+ * Keep this as .example and maintain actual file on server only.
+ */
+
+// Database credentials
+$db_username = "YOUR_DB_USERNAME_HERE";
+$db_password = "YOUR_DB_PASSWORD_HERE";
+$db_name = "YOUR_DB_NAME_HERE";
+$db_host = "localhost";
+
+/**
+ * SECURITY WARNING:
+ *
+ * The original code uses deprecated mysql_connect() function:
+ * - Removed in PHP 7.0+
+ * - Has security vulnerabilities
+ * - Should be replaced with mysqli or PDO
+ *
+ * Original code (DO NOT USE):
+ * $dbh = mysql_connect($db_host, $db_username, $db_password) or die ('I cannot connect to the database because: ' . mysql_error());
+ * mysql_select_db($db_name);
+ *
+ * Recommended replacement using mysqli:
+ */
+
+// Modern MySQL connection using mysqli
+$dbh = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+
+// Check connection
+if (!$dbh) {
+    error_log("Database connection failed: " . mysqli_connect_error());
+    die("Database connection error. Please contact support.");
+}
+
+// Set character set
+mysqli_set_charset($dbh, "utf8mb4");
+
+/**
+ * Even better: Use PDO for prepared statements and better security
+ *
+ * try {
+ *     $pdo = new PDO(
+ *         "mysql:host=$db_host;dbname=$db_name;charset=utf8mb4",
+ *         $db_username,
+ *         $db_password,
+ *         [
+ *             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+ *             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+ *             PDO::ATTR_EMULATE_PREPARES => false
+ *         ]
+ *     );
+ * } catch (PDOException $e) {
+ *     error_log("Database connection failed: " . $e->getMessage());
+ *     die("Database connection error. Please contact support.");
+ * }
+ */
+
+/**
+ * DEPLOYMENT NOTES:
+ *
+ * To use this configuration:
+ * 1. Copy this file to: includes/db_connection.php
+ * 2. Replace placeholder values with actual credentials
+ * 3. Ensure the database exists and credentials are correct
+ * 4. Test the connection
+ * 5. Never commit the actual credentials file to Git
+ *
+ * Current status (as of 2025-11-17):
+ * - Database 'db37838_imageteam_com_catalog' does NOT exist on server
+ * - Legacy PHP files reference this database but are not actively used
+ * - Main Nuxt.js site does NOT require database connection
+ */

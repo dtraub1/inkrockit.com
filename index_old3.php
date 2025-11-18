@@ -1,0 +1,310 @@
+<?
+  session_start();
+  $_SESSION['search_id'] = $HTTP_REFERER;
+?>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Inkrockit, Inkrocket, Ink Rocket, Ink Rockit, Pocket Folders, Discount Cheap Presentation Folders, Tri Panel Folders, Reinforced Folders, Legal Size Pocket Folders, Online Commercial Printing CMYK/PMS CMYK PMS Color Ink, Two Pocket, Single Pocket Presentation Folder, Low Cost Presentation Folder, Pocket Presentation Folder Printing, Full Color Pocket Folders, Mini Pocket Folders, Biz Cards Slits, Folders, Custom Folder with Pockets, Designing Free Folders Desgin Affordable Printing Industry Company Lamination Embossed Foil Stamped Laminated Pocket Presentatoin Folder Printer Sellers Thermography</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta NAME="keywords" CONTENT="Discount Cheap Presentation Pocket Folder printing business card printing catalog printing cheap printing color printing commercial printing custom printing digital printing discount printing envelope printing flyer printing four color printing full color  printing offset printing online printing pocket folders post card printing presentation folders printing company printing services CMYK PMS CMYK Printing">
+<meta NAME="description" CONTENT="Pocket Folder 4 color folder 4 page
+folder business card folder Inkrockit Inkrocket Ink Rocket Ink Rockit
+business folder cd presentation folder cheap folder, cheap pocket folder
+color file folder color file jacket color folder colored file folder
+corporate folder custom designed folder presentation printed, custom
+folder custom pocket folder custom presentation folder custom printed
+folder custom printed folder custom printed pocket folder customized
+folder design folder discount folder embossed pocket folder embossed
+presentation folder file folder file folder print file folder printed
+file jacket file pocket folder foil stamped folder folder for business
+presentation folder printer folder printing folder special full color
+folders full color presentation folder glossy folder imprinted folder
+laminated pocket folder legal size folder online file jacket online
+folder online presentation folder online printing folder">
+<meta NAME="author" CONTENT="HBO">
+<meta name="allow-search" content="yes">
+<meta name="audience" content="all">
+<meta name="robots" content="all">
+<meta name="Language" content="en">
+<meta name="distribution" content="Global">
+<meta name="Classification" content="Color Printing">
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.style1 {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	list-style-type: disc;
+	list-style-image: url(images/temp/bluebullet.GIF);
+}
+.style3 {
+	color: #95CAE1;
+	font-style: italic;
+	font-weight: bold;
+}
+.style4 {color: #FFFFFF; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; list-style-type: disc; list-style-image: url(images/temp/bluebullet.GIF); font-weight: bold; }
+.style6 {
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #B6EDF8;
+}
+.style7 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #B6EDF8;
+	font-weight: bold;
+}
+.style8 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+}
+.style10 {
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 16px;
+	color: #0F4088;
+}
+.style11 {
+	color: #FF5B00;
+	font-weight: bold;
+	line-height: 20px;
+	font-size: 14px;
+	font-style: italic;
+}
+.style13 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #0F4088;
+	margin-left: 0;
+	padding-left: 0;
+	text-indent: -2em;
+	line-height: 10px;
+}
+.style14 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	font-style: italic;
+}
+.style12 {	font-size: 13px;
+	color: #013E8E;
+}
+.style15 {font-size: 9px}
+.style16 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #013E8E;
+}
+.style17 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666666;
+	font-weight: bold;
+}
+.style18 {	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	font-style: italic;
+}
+.style19 {color: #FFFF00}
+.style20 {font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; color: #FFFF00; }
+.style21 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #0F4088;
+}
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+var wd = 625;
+var ht = 416;
+
+var wLeft = (screen.width - wd) / 2;
+var wTop = (screen.height - ht) / 2;
+
+function requestSamples(){
+	window.open("request/","new","left="+wLeft+",top="+wTop+",width="+wd+",height="+ht+",statusbar=no,resizable=no");
+}
+</script>
+</head>
+
+<body >
+<table width="1015" height="845" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="top"><table width="1015" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="442" valign="top"><img src="images/temp/top_left.jpg" width="442" height="344"></td>
+        <td width="272" valign="top"><table width="272" height="344" border="0" cellpadding="0" cellspacing="0" bgcolor="#03080E">
+          <tr>
+            <td height="96"><img src="images/temp/top_mid1.jpg" width="272" height="96"></td>
+          </tr>
+          <tr>
+            <td height="25"><img src="images/temp/top_mid2.jpg" width="272" height="25"></td>
+          </tr>
+          <tr>
+            <td height="43" bgcolor="#03080E">
+               &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td height="180" valign="top"><img src="images/temp/top_mid4.jpg" width="272" height="180"></td>
+          </tr>
+        </table></td>
+        <td width="301" valign="top" background="images/temp/top_right.jpg"><blockquote>
+          <p class="style1"><br>
+            <span class="style3">With lots of helpful additions</span></p>
+          </blockquote>
+          <ul>
+            <li class="style4">Instant pricing on our entire selection of high quality printed materials.<br>
+&nbsp;            </li>
+            <li class="style4">Place your orders directly online, 24/7, with just a few clicks of your mouse.<br>
+&nbsp;            </li>
+            <li class="style4">Check on the status of your order.<br>
+&nbsp;            </li>
+            <li class="style4">Lots of helpful information on preparing your files for print.<br>
+&nbsp;            </li>
+            <li class="style4">The Crisis Control Center: An online/offline resource when you <br>
+              need something done in a hurry. <br>
+&nbsp;            </li>
+            <li class="style4">Plus monthly specials and a whole <br>
+              lot more!</li>
+          </ul></td>
+      </tr>
+    </table>
+      <table width="1015" height="63" border="0" cellpadding="0" cellspacing="0" background="images/temp/midbluebar.jpg">
+        <tr>
+          <td width="20" height="16">&nbsp;</td>
+          <td width="492">&nbsp;</td>
+          <td width="266">&nbsp;</td>
+          <td width="237">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="20" valign="top">&nbsp;</td>
+          <td width="492" valign="top" class="style20">Until then, please use
+            our toll free number to receive the same<br>
+quality service we've been providing our customers for years... </td>
+          <td width="266" valign="top"><span class="style7">1.800.900.5632</span></td>
+          <td valign="top" class="style6"><a href="javascript:requestSamples();" class="style19">Click
+              here</a> to receive our custom<br>
+printed folders sample pack. </td>
+        </tr>
+      </table>
+      <table width="1015" height="438" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="176" valign="top" bgcolor="#E6E6E6"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="20">&nbsp;</td>
+              <td><p class="style8"><span class="style11"><br>
+                PRODUCTS</span><br>
+                  <span class="style10">Pocket Folders<br>
+    Multipage Catalogs<br>
+    Sales Sheets<br>
+    Brochures<br>
+    Posters<br>
+    Rack Cards<br>
+    Business Cards<br>
+    Letterhead<br>
+    Envelopes<br>
+    Post Cards<br>
+    <img src="images/temp/grayline.jpg" width="132" height="26"> <br>
+                  </span><span class="style11">DIRECT MAIL</span><span class="style10"><br>
+    Boost your sales<br>
+    with direct mail.</span>
+                </p>
+                <p class="style21"><img src="images/temp/bluedot.jpg" width="12" height="10">&nbsp;Marketing &amp; Design<br>
+                  <img src="images/temp/bluedot.jpg" width="12" height="10">&nbsp;Lists<br>
+                  <img src="images/temp/bluedot.jpg" width="12" height="10">&nbsp;Mailing</p>
+                <p class="style8"><span class="style10"><img src="images/temp/grayline2.jpg" width="132" height="15"> <br>
+                  </span><span class="style11">DESIGN SERVICES </span><span class="style10"><br>
+  Need a superior<br>
+  design solution?.</span> </p>
+                <p class="style21"><img src="images/temp/bluedot.jpg" width="12" height="10">&nbsp;Web/Multimedia<br>
+                  <img src="images/temp/bluedot.jpg" width="12" height="10">&nbsp;Print Collateral<br>
+                  <img src="images/temp/bluedot.jpg" width="12" height="10">&nbsp;Identity<br>
+                  <img src="images/temp/bluedot.jpg" width="12" height="10">&nbsp;Branding</p>
+                </td>
+            </tr>
+          </table>            <p><br>
+          </p></td>
+          <td valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="533"><table width="503" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="227" height="304" valign="top" background="images/new/main-customprintedpocketfolders.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="8%">&nbsp;</td>
+                        <td width="92%" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="105" valign="top">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td height="75" valign="top"><p class="style15"><span class="style14"><img src="images/new/orangearrow.jpg" width="14" height="13"> Process 4-color<br>
+                                        <img src="images/new/orangearrow.jpg" width="14" height="13"> 4&quot; Pockets<br>
+                                        <img src="images/new/orangearrow.jpg" width="14" height="13"> Business Card Slit<br>
+                                        <img src="images/new/orangearrow.jpg" width="14" height="13"> Premium Cover Stock</span></p></td>
+                            </tr>
+                            <tr>
+                              <td valign="top"><span class="style14"><span class="style12">Get Noticed with high quality custom designed pocket folders for your company or project. </span></span><br>
+                                  <br>                                  </td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                  </table></td>
+                  <td width="276" height="304" valign="top" background="images/new/main-customprintedpocketfolders2a.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                      <tr valign="top">
+                        <td width="92" height="275">&nbsp;</td>
+                        <td width="276" height="275">&nbsp;</td>
+                      </tr>
+                      <tr valign="top">
+                        <td width="92">&nbsp;</td>
+                        <td><span class="style14"><img src="images/new/orangearrow.jpg" width="14" height="13"> Custom Die-cuts Available </span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+              </table></td>
+              <td valign="top"><table width="251"  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="252" height="162" valign="top" background="images/new/main-multipagecatalogs.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="37%">&nbsp;</td>
+                        <td width="63%" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="33" valign="top">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td valign="top"><span class="style14"><img src="images/new/orangearrow.jpg" width="14" height="13"> <span class="style18">8 Page <br>
+                                      <img src="images/new/orangearrow.jpg" width="14" height="13"> Self-cover <br>
+                                      <img src="images/new/orangearrow.jpg" width="14" height="13"> Full Color</span> </span></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                  </table></td>
+				  </tr>
+				  <tr>
+                  <td width="251" height="162" background="images/new/main-salesmarketingsheets.jpg">&nbsp;</td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td colspan="2"><p>&nbsp;</p>
+                <blockquote>
+                  <p><span class="style16">To all of our existing InkRockit customers we say, &quot;<em>Thank You!</em>&quot;</span><br>
+                      <span class="style17">It has been our pleasure working with you and we look forward to<br>
+                  serving you even better in the years ahead. </span></p>
+                </blockquote></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

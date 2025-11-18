@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="144px" height="98px" viewBox="0 0 144 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Star</title>
+    <defs>
+        <polygon id="path-1" points="0 0 144 0 144 96 0 96"></polygon>
+    </defs>
+    <g id="InkRockit_Photoframe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Star" transform="translate(0.000000, 0.156200)">
+            <g id="Star" transform="translate(0.000000, 0.843800)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+            </g>
+            <polygon stroke="#FFFFFF" stroke-width="1.4" points="90 58.4525709 70.8631997 92.6876009 68.4755612 53.5397582 36.379877 76.0813079 51.2143014 39.7743629 12.5166774 46.157802 41.635025 19.8827904 4 8.84380045 31.1516527 0.879761075 41.635025 -2.19518949 12.5166774 -28.4702011 51.2143014 -22.086762 36.379877 -58.393707 68.4755612 -35.8521573 70.8631997 -75 90 -40.76497 109.1368 -75 111.524439 -35.8521573 143.620123 -58.393707 128.785699 -22.086762 167.483323 -28.4702011 138.364975 -2.19518949 176 8.84380045 144.002661 18.2291617 138.364975 19.8827904 167.483323 46.157802 128.785699 39.7743629 143.620123 76.0813079 111.524439 53.5397582 109.1368 92.6876009"></polygon>
+        </g>
+    </g>
+</svg>

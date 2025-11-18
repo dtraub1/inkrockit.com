@@ -1,0 +1,586 @@
+@font-face {
+    font-family: CreightonProBook;
+    src: local("CreightonProBook"),
+        url(css/font/CreightonProBook.otf);
+}
+@font-face {
+    font-family: CreightonProMedium;
+    src: local("CreightonProMedium"),
+        url(css/font/CreightonProMedium.otf);
+}
+@font-face {
+    font-family: HelveticaNeue-BoldCond;
+    src: local("HelveticaNeue-BoldCond"),
+        url(css/font/HelveticaNeue-BoldCond.otf);
+}
+@font-face {
+    font-family: HelveticaNeue-BoldExt;
+    src: local("HelveticaNeue-BoldExt"),
+        url(css/font/HelveticaNeue-BoldExt.otf);
+}
+* {
+    margin:0;
+    padding:0;
+}
+body {
+    background:url(../image/bodyBg.png) repeat-x #000;
+    min-width:1050px;
+   padding-bottom:90px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+.TopHeader {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #999999;
+    border-left: 1px solid #999999;
+    border-radius: 0 0 9px 9px;
+    border-right: 1px solid #999999;
+    height: 127px;
+    margin: 0 auto;
+    padding-bottom: 2px;
+    padding-right: 15px;
+    width: 1017px;
+}
+.logo{
+    float:left;
+   margin: 11px 0 0 29px;
+}
+.HeadItem {
+    background-color:#f5f5f5;
+    border:1px solid #cccccc;
+    border-radius:9px;
+    padding:2px;
+    float:right;
+    height:95px;
+    width:314px;
+  margin: 14px 0 0 10px;
+    position:relative;
+    z-index:10; 
+}
+.headitemname {
+    width:300px;
+/*    font-family: 'CreightonProBook';*/
+    float:left;
+    z-index: 10;
+    font-size:26px;
+    color:#f2008f;
+    letter-spacing: 0px;
+    height:27px;
+    padding-top:2px;
+}
+.headitemtext {
+    font-weight: 550;
+    font-size:12px;
+    width:200px;
+    color:#666666;
+}
+.headitemtext2 {
+   color: #666666;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 1px;
+    margin-left:3px;
+    width: 160px;
+}
+.headtext {
+    position:absolute;
+    float:left;
+    padding-left: 5px;
+    border-radius: 9px;
+    z-index:10;
+}
+.headbutton {
+   background: url("../image/buttonBgMod.png") repeat-x scroll 0 0 #519303;
+    border: medium none;
+    border-radius: 7px 7px 7px 7px;
+    color: #FFFFFF;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 23px;
+    margin-top: 5px;
+    margin-left:2px;
+    padding: 1px 10px 2px 9px;
+}
+
+.item1Bg {
+    position:absolute;
+    right: -4px;
+    top: -28px;
+    z-index: 1;
+}
+.item2Bg {
+    position:absolute;
+    right: 2px;
+    top: -6px;
+    z-index: 1;
+}
+.logNav {
+   
+    width:1005px;
+    margin:0 auto;
+    color:#ffffff;
+    font-size:16px;
+    font-weight: bold;
+}
+
+.main {
+    width:1032px;
+  margin: 17px auto 0;
+/*    background-color:#e5e5e5;*/
+    background:url('../image/main.png') repeat-x #fff;
+/*box-shadow: inset 0 0 5px 5px #888;*/
+    border-radius: 11px;
+    border:1px solid #999999;
+}
+
+.clear {
+    clear:both;
+}
+
+
+.mainFoot {
+   background: none repeat scroll 0 0 #FFFFFF;
+    float: left;
+   margin: 68px 0 8px;
+    padding-left: 1px;
+    position: relative;
+    width: 1012px;
+}
+.mainFooterFirstBlock {
+    cursor:pointer;
+   background: url("../image/DESIGN_IT.png") no-repeat scroll 18px 13px transparent;
+    margin-bottom: 15px;
+    float:left;
+      padding-right: 5px;
+    width: 320px;
+    height:121px;
+/*    background:red;*/
+    border-radius: 8px;
+    border:1px solid #fff;
+}
+.mainFooterSecondBlock {
+    cursor:pointer;
+   background: url("../image/PRINT_IT.png") no-repeat scroll 20px 14px transparent;
+    margin-bottom: 15px;
+    float:left;
+    padding-left: 4px;
+    width: 324px;
+    height:121px;
+/*    background:red;*/
+    border-radius: 10px;
+    border:1px solid #fff;
+    margin-left: 5px;
+}
+.mainFooterThirdBlock {
+    cursor:pointer;
+   background: url("../image/MAIL_IT.png") no-repeat scroll 19px 14px transparent;
+    margin-bottom: 15px;
+    float:left;
+    padding-left: 4px;
+    width:324px;
+    height:121px;
+/*    background:red;*/
+    border-radius: 10px;
+    border:1px solid #fff;
+    margin-left: 6px;
+}
+.mainFooterBlockText {
+   color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin: 58px 0 0 20px;
+    width: 205px;
+}
+.footerSeparator {
+    background: none repeat scroll 0 0 #AFAFAF;
+    float: left;
+    height: 108px;
+    margin-top: 7px;
+    width: 1px;
+}
+.coating {
+   background: url("../image/mainHideBlockBg.png") repeat-x scroll 0 0 #666666;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 5px 1px #CCCCCC;
+    height: 229px;
+    left: -536px;
+    position: absolute;
+    top: -103px;
+    width: 527px;
+    display:none;
+    z-index: 1;
+}
+.coatingArrow {
+    position:absolute;
+    top: 107px;
+    left: 527px;
+    width:1px;
+    height:0px;
+    margin:0;
+    padding:0;
+    border-right: 6px solid transparent ;
+    border-left:6px solid #595959;
+    border-top:6px solid transparent;
+    border-bottom:6px solid transparent;
+}
+.coatingImg {
+    float: left;
+    margin: 15px 16px
+}
+.coatTitle {
+    color: #FFC000;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 12px;
+    width: 200px;
+}
+.coatTopText {
+    color: #FFFFFF;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin: 5px 0 0;
+    width: 240px;
+}
+.coatSecTitle {
+    color: #FFFFFF;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 22px 0 3px;
+    width: 240px
+}
+.coatSecText {
+    color: #FFFFFF;
+    float: left;
+    font-family: arial;
+    font-size: 12px;
+    margin-top: 3px;
+    width: 240px;
+}
+.firstMain {
+/*    display:none;*/
+height:379px;
+}
+.secondMain {
+    display:none;
+  height:379px;  
+}
+.thirdMain {
+   display:none; 
+   height:379px;
+}
+.foursMain {
+    display:none;
+    height:379px;
+}
+.mainSecTitle {
+    float: left;
+    margin: 108px 0 0 435px;
+    width: 300px;
+}
+.secText {
+    float: right;
+    font-family: arial;
+    font-size: 12px;
+    margin-right: 45px;
+    margin-top: 11px;
+    text-align: right;
+    width: 250px;
+}
+.secButton {
+    float: right;
+    margin: 2px 45px 0 0;
+    padding: 0;
+    text-align: right;
+    width: 700px;
+}
+.MainButtonSec {
+   background: url("../image/buttonBg.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 19px 0 0 21px;
+    padding: 2px 14px;
+}
+.mainThirdTitle {
+   float: left;
+    margin: 19px 0 0 23px;
+}
+.thirdText {
+    float:left;
+    font-family: arial;
+    font-size: 12px;
+    margin: 13px 0 0 21px;
+    width: 350px
+}
+.MainButtonThird {
+    background: url('../image/DownloadButtonTextBg.png') repeat-x #353535;
+}
+.plus {
+    margin-right:1px;
+    border-radius: 8px 0 0 8px;
+    background: url('../image/plusBg.png') repeat-x ;
+    height:23px;
+    float:left;
+    width:25px;
+}
+.plusImg {
+    float:left;
+    margin: 3px 0 0 7px;
+}
+.buttonText {
+    background: url("../image/DownloadButtonTextBg.png") repeat-x scroll 0 0 #353535;
+    border-radius: 0 8px 8px 0;
+    color: #FFFFFF;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 20px;
+    padding-top: 3px;
+    padding-left: 7px;
+    padding-right: 15px;
+    padding-top: 3px;
+}
+.custPrintPancer {
+    position:relative;
+  float: left;
+    margin-left: 23px;
+    margin-top: 20px;
+    width: 700px;
+}
+.custprintNav {
+    float: left;
+    font-size: 14px;
+    font-weight: normal;
+    list-style: none outside none;
+    margin: 13px 0 10px;
+    width: 380px;
+}
+.custprintNav  li {
+   border-bottom: 1px dotted #999999;
+    color: #FFFFFF;
+    display: inline;
+    float: left;
+    margin: 0 9px 2px 12px;
+    padding-bottom: 1px;
+    width: 167px;
+    cursor: pointer;
+}
+.customPrintButton {
+    cursor: pointer;
+}
+.customPrintSelect {
+   background: url("../image/customPrintSelectBg.png") repeat scroll 0 0 transparent;
+    border-radius: 0 8px 8px 8px;
+    border-top: 1px solid #FFFFFF;
+   box-shadow: 5px 5px 10px -3px;
+    float: left;
+    height: 190px;
+    position: absolute;
+    top: 23px;
+    width: 380px;
+    display:none;
+}
+.mainthirdTitle {
+   float: left;
+    margin: 108px 0 0 423px;
+    width: 320px;
+}
+.foursText {
+   float: right;
+    font-family: arial;
+    font-size: 12px;
+    margin-right: 45px;
+    margin-top: 12px;
+    text-align: right;
+    width: 260px;
+    color:#333333;
+}
+.thirdMainButton {
+    float: right;
+   margin: 20px 45px 0 0;
+    padding: 0;
+    text-align: right;
+    width: 700px;
+}
+.MainButtonthird {
+   background: url("../image/buttonBg.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 0 21px;
+    padding: 3px 32px 4px 18px;
+    position: relative;
+}
+.MainButtonthird img {
+    position: absolute;
+    right: 18px;
+    top: 6px;
+}
+.rotatorbutton {
+    width:12px;
+    height:12px;
+    float:left;
+    border-radius: 50%;
+    background: #cccccc;
+    cursor:pointer;
+    margin-right: 8px;
+}
+.rotatormainbutton {
+   float: left;
+    margin-left: 335px;
+    margin-top: 141px;
+    
+}
+.mainFooterBorder {
+ left: 0;
+    position: absolute;
+    top: -22px;
+}
+.headitemname2 {
+    color: #F2008F;
+    float: left;
+    font-size: 26px;
+    height: 27px;
+    letter-spacing: 0;
+    margin-bottom: 0px;
+    padding-top: 3px;
+    width: 300px;
+    z-index: 10;
+    margin-left:3px;
+}
+
+
+/*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*/
+/*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*/
+/*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*/
+/*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*/
+/*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*/
+/*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*//*Landing Page*/
+
+.landingTopPhone {
+    float: right;
+    margin-right: 23px;
+    margin-top: 29px;
+}
+.LandingPage {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 8px 8px 0 0;
+    margin: 15px 17px 0 15px;
+    position: relative;
+    width: 1002px;
+}
+.landingLeft {
+    width:690px;
+    float:left;
+    
+}
+.landingRight {
+    width:310px;
+    float:right;
+}
+.landingTitle {
+    width:690px;
+    float: left;
+    margin-left: 61px;
+    margin-top: 42px;
+}
+.landingImg {
+    float: left;
+    margin-left: 32px;
+    margin-top: 49px;
+}
+.landRightTop {
+    float: right;
+    margin-right: 26px;
+    margin-top: 42px;
+}
+.landRightBoldText {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-left: 14px;
+    margin-right: 18px;
+    margin-top: 4px;
+}
+.landRightFirstText {
+    float: left;
+    line-height: 17px;
+    margin-left: 13px;
+    margin-right: 25px;
+    margin-top: 16px;
+}
+.landRightSecText {
+   float: left;
+    line-height: 17px;
+    margin-left: 13px;
+    margin-right: 15px;
+    margin-top: 17px; 
+}
+.Landlogos {
+   background: url("../image/pepsiBg.png") repeat-x scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    height: 211px;
+    margin-left: 12px;
+    margin-top: 51px;
+    position: relative;
+    width: 270px;
+}
+.LandImg1 {
+    left: 57px;
+    position: absolute;
+    top: 22px;
+}
+.LandImg2 {
+  position: absolute;
+    right: 63px;
+    top: 21px;  
+}
+.LandImg3 {
+    left: 24px;
+    position: absolute;
+    top: 69px;
+}
+.LandImg4 {
+    left: 95px;
+    position: absolute;
+    top: 58px;
+}
+.LandImg5 {
+  position: absolute;
+    right: 24px;
+    top: 68px;  
+}
+.LandImg6 {
+   left: 37px;
+    position: absolute;
+    top: 130px; 
+}
+.LandImg7 {
+   position: absolute;
+    right: 33px;
+    top: 127px; 
+}
+.LandLogogsText{
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin-left: 18px;
+    margin-top: 169px;
+    text-align: center;
+    vertical-align: bottom;
+    width: 230px;
+}
