@@ -1044,6 +1044,8 @@
   </div>
 
   <script>
+    // Register Vuelidate plugin
+    Vue.use(window.vuelidate.default);
     const { required, email, minLength } = window.validators;
 
     new Vue({
