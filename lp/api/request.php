@@ -94,33 +94,51 @@ function validate_list_fields($data, $post)
 }
 
 
-function add_user_func($company, $data)
+function add_user_func($mysqli, $company, $data)
 {
-    mysql_query('INSERT INTO users (login,password,email,first_name,last_name,group_id,user_abbr,company_id,street,street2,city,state,zipcode,phone,phone_ext,position,industry,fax,country) 
-                    VALUES ("' . mysql_real_escape_string($data['email']) . '","","' . mysql_real_escape_string($data['email']) . '","' . convFormat($data['fname']) . '",
-                        "' . convFormat($data['lname']) . '",1,"","' . $company . '","' . convFormat($data['street']) . '","' . convFormat($data['street2']) . '","' . convFormat($data['city']) . '",
-                        "' . mysql_real_escape_string($data['state']) . '","' . mysql_real_escape_string($data['zip']) . '","' . mysql_real_escape_string($data['phone']) . '", "' . mysql_real_escape_string($data['ext']) . '",
-                        "' . mysql_real_escape_string($data['position']) . '","' . mysql_real_escape_string($data['industry']) . '","' . mysql_real_escape_string($data['fax']) . '",
-                        "' . mysql_real_escape_string($data['country']) . '")');
-    $user_id = mysql_insert_id();
-    mysql_query('INSERT INTO credit_card_shipping (user_id,company_id,title,first_name,last_name,company,address,address2,suite,city,state,zip,country,phone,email,public) 
-                VALUES ("' . $user_id . '","' . $company . '","default","' . mysql_real_escape_string($data['fname']) . '","' . mysql_real_escape_string($data['lname']) . '",
-                    "' . mysql_real_escape_string($data['co']) . '","' . mysql_real_escape_string($data['street']) . '","' . mysql_real_escape_string($data['street2']) . '","","' . mysql_real_escape_string($data['city']) . '",
-                        "' . mysql_real_escape_string($data['state']) . '","' . mysql_real_escape_string($data['zip']) . '","' . mysql_real_escape_string($data['country']) . '",
-                            "' . mysql_real_escape_string($data['phone']) . '","' . mysql_real_escape_string($data['email']) . '",0)');
-    mysql_query('INSERT INTO credit_card_billing (user_id,title,first_name,last_name,company,address,address2,suite,city,state,zip,country,phone,phone_ext,email,`default`,visible) 
-                VALUES ("' . $user_id . '","default","' . mysql_real_escape_string($data['fname']) . '","' . mysql_real_escape_string($data['lname']) . '",
-                    "' . mysql_real_escape_string($data['co']) . '","' . mysql_real_escape_string($data['street']) . '","' . mysql_real_escape_string($data['street2']) . '","","' . mysql_real_escape_string($data['city']) . '",
-                        "' . mysql_real_escape_string($data['state']) . '","' . mysql_real_escape_string($data['zip']) . '","' . mysql_real_escape_string($data['country']) . '",
-                            "' . mysql_real_escape_string($data['phone']) . '","' . mysql_real_escape_string($data['ext']) . '","' . mysql_real_escape_string($data['email']) . '",1,1)') or die(mysql_error());
+    $result = mysqli_query($mysqli, 'INSERT INTO users (login,password,email,first_name,last_name,group_id,user_abbr,company_id,street,street2,city,state,zipcode,phone,phone_ext,position,industry,fax,country)
+                    VALUES ("' . mysqli_real_escape_string($mysqli, $data['email']) . '","","' . mysqli_real_escape_string($mysqli, $data['email']) . '","' . convFormat($mysqli, $data['fname']) . '",
+                        "' . convFormat($mysqli, $data['lname']) . '",1,"","' . $company . '","' . convFormat($mysqli, $data['street']) . '","' . convFormat($mysqli, $data['street2']) . '","' . convFormat($mysqli, $data['city']) . '",
+                        "' . mysqli_real_escape_string($mysqli, $data['state']) . '","' . mysqli_real_escape_string($mysqli, $data['zip']) . '","' . mysqli_real_escape_string($mysqli, $data['phone']) . '", "' . mysqli_real_escape_string($mysqli, $data['ext']) . '",
+                        "' . mysqli_real_escape_string($mysqli, $data['position']) . '","' . mysqli_real_escape_string($mysqli, $data['industry']) . '","' . mysqli_real_escape_string($mysqli, $data['fax']) . '",
+                        "' . mysqli_real_escape_string($mysqli, $data['country']) . '")');
+
+    if (!$result) {
+        error_log("ERROR: Failed to insert user - " . mysqli_error($mysqli));
+        response('error', 'Failed to create user account');
+    }
+
+    $user_id = mysqli_insert_id($mysqli);
+
+    $result = mysqli_query($mysqli, 'INSERT INTO credit_card_shipping (user_id,company_id,title,first_name,last_name,company,address,address2,suite,city,state,zip,country,phone,email,public)
+                VALUES ("' . $user_id . '","' . $company . '","default","' . mysqli_real_escape_string($mysqli, $data['fname']) . '","' . mysqli_real_escape_string($mysqli, $data['lname']) . '",
+                    "' . mysqli_real_escape_string($mysqli, $data['co']) . '","' . mysqli_real_escape_string($mysqli, $data['street']) . '","' . mysqli_real_escape_string($mysqli, $data['street2']) . '","","' . mysqli_real_escape_string($mysqli, $data['city']) . '",
+                        "' . mysqli_real_escape_string($mysqli, $data['state']) . '","' . mysqli_real_escape_string($mysqli, $data['zip']) . '","' . mysqli_real_escape_string($mysqli, $data['country']) . '",
+                            "' . mysqli_real_escape_string($mysqli, $data['phone']) . '","' . mysqli_real_escape_string($mysqli, $data['email']) . '",0)');
+
+    if (!$result) {
+        error_log("ERROR: Failed to insert shipping info - " . mysqli_error($mysqli));
+        response('error', 'Failed to save shipping information');
+    }
+
+    $result = mysqli_query($mysqli, 'INSERT INTO credit_card_billing (user_id,title,first_name,last_name,company,address,address2,suite,city,state,zip,country,phone,phone_ext,email,`default`,visible)
+                VALUES ("' . $user_id . '","default","' . mysqli_real_escape_string($mysqli, $data['fname']) . '","' . mysqli_real_escape_string($mysqli, $data['lname']) . '",
+                    "' . mysqli_real_escape_string($mysqli, $data['co']) . '","' . mysqli_real_escape_string($mysqli, $data['street']) . '","' . mysqli_real_escape_string($mysqli, $data['street2']) . '","","' . mysqli_real_escape_string($mysqli, $data['city']) . '",
+                        "' . mysqli_real_escape_string($mysqli, $data['state']) . '","' . mysqli_real_escape_string($mysqli, $data['zip']) . '","' . mysqli_real_escape_string($mysqli, $data['country']) . '",
+                            "' . mysqli_real_escape_string($mysqli, $data['phone']) . '","' . mysqli_real_escape_string($mysqli, $data['ext']) . '","' . mysqli_real_escape_string($mysqli, $data['email']) . '",1,1)');
+
+    if (!$result) {
+        error_log("ERROR: Failed to insert billing info - " . mysqli_error($mysqli));
+        response('error', 'Failed to save billing information');
+    }
 
     return $user_id;
 }
 
-function convFormat($val)
+function convFormat($mysqli, $val)
 {
-    // return iconv("ISO-8859-1", "UTF-8//TRANSLIT", mysql_real_escape_string($val));
-    return mysql_real_escape_string($val);
+    // return iconv("ISO-8859-1", "UTF-8//TRANSLIT", mysqli_real_escape_string($mysqli, $val));
+    return mysqli_real_escape_string($mysqli, $val);
 }
 
 
@@ -497,7 +515,21 @@ foreach ($required as $key => $field) {
 
 $today = date("Ymd");
 $searchid = ($_SESSION['search_id']) ? $_SESSION['search_id'] : '';
-$completeaddress = mysql_real_escape_string($data['co']) . " \nATTN: " . mysql_real_escape_string($data['fname']) . " " . mysql_real_escape_string($data['lname']) . " \n" . mysql_real_escape_string($data['street']) . " \n" . mysql_real_escape_string($data['city']) . ", " . mysql_real_escape_string($data['state']) . " " . $data['zip'] . " \n\n(" . mysql_real_escape_string($data['area']) . ") " . mysql_real_escape_string($data['phone']);
+
+$data['co'] = trim($data['co']);
+
+// Establish database connection
+$mysqli = mysqli_connect("localhost", "preprod_user", "!1q2w3eZ", "preprod");
+
+if (!$mysqli) {
+    error_log("ERROR: Database connection failed - " . mysqli_connect_error());
+    response('error', 'System error. Please try again later.');
+}
+
+// Set character encoding
+mysqli_set_charset($mysqli, "utf8");
+
+$completeaddress = mysqli_real_escape_string($mysqli, $data['co']) . " \nATTN: " . mysqli_real_escape_string($mysqli, $data['fname']) . " " . mysqli_real_escape_string($mysqli, $data['lname']) . " \n" . mysqli_real_escape_string($mysqli, $data['street']) . " \n" . mysqli_real_escape_string($mysqli, $data['city']) . ", " . mysqli_real_escape_string($mysqli, $data['state']) . " " . $data['zip'] . " \n\n(" . mysqli_real_escape_string($mysqli, isset($data['area']) ? $data['area'] : '') . ") " . mysqli_real_escape_string($mysqli, $data['phone']);
 $keywords = (empty($_SESSION['keyword'])) ? '' : str_replace('+', ' ', $_SESSION['keyword']);
 if (empty($keywords) && !empty($searchid)) {
     $str = explode('&', $searchid);
@@ -512,34 +544,42 @@ if (empty($keywords) && !empty($searchid)) {
     }
 }
 
-$data['co'] = trim($data['co']);
-
-//    mysql_close();
-//new DB
-$dblink2 = mysql_connect("localhost", "preprod_user", "!1q2w3eZ");
-// mysql_query("SET NAMES 'utf8';");
-// mysql_set_charset("utf8", $dblink2);
-mysql_select_db("preprod");
-
 //check company
-$comp_exist = mysql_query('SELECT id FROM users_company WHERE company="' . mysql_real_escape_string($data['co']) . '"');
-$comp = mysql_fetch_array($comp_exist);
+$comp_exist = mysqli_query($mysqli, 'SELECT id FROM users_company WHERE company="' . mysqli_real_escape_string($mysqli, $data['co']) . '"');
+$comp = mysqli_fetch_array($comp_exist);
 
 //add new company
-mysql_query('INSERT INTO users_company (company) VALUES ("' . mysql_real_escape_string($data['co']) . '")');
-$comp_id = mysql_insert_id();
+$result = mysqli_query($mysqli, 'INSERT INTO users_company (company) VALUES ("' . mysqli_real_escape_string($mysqli, $data['co']) . '")');
+if (!$result) {
+    error_log("ERROR: Failed to insert company - " . mysqli_error($mysqli));
+    mysqli_close($mysqli);
+    response('error', 'Failed to register company');
+}
+$comp_id = mysqli_insert_id($mysqli);
 
 //keep eye on it
-mysql_query('INSERT INTO eye_user_company (uid, company_id) VALUES (1, "' . $comp_id . '")');
+$result = mysqli_query($mysqli, 'INSERT INTO eye_user_company (uid, company_id) VALUES (1, "' . $comp_id . '")');
+if (!$result) {
+    error_log("WARNING: Failed to insert eye_user_company - " . mysqli_error($mysqli));
+    // Non-critical, continue
+}
 
 //add new user
-$user['id'] = add_user_func($comp_id, $data);
+$user['id'] = add_user_func($mysqli, $comp_id, $data);
 //update company main user
-mysql_query('UPDATE users_company SET main_user="' . $user['id'] . '" WHERE id="' . $comp_id . '"');
+$result = mysqli_query($mysqli, 'UPDATE users_company SET main_user="' . $user['id'] . '" WHERE id="' . $comp_id . '"');
+if (!$result) {
+    error_log("WARNING: Failed to update company main_user - " . mysqli_error($mysqli));
+    // Non-critical, continue
+}
 $req_status = 1;
 
 if (!empty($comp)) {
-    mysql_query('UPDATE users_company SET duplicate=1 WHERE id="' . $comp_id . '"');
+    $result = mysqli_query($mysqli, 'UPDATE users_company SET duplicate=1 WHERE id="' . $comp_id . '"');
+    if (!$result) {
+        error_log("WARNING: Failed to mark duplicate company - " . mysqli_error($mysqli));
+        // Non-critical, continue
+    }
 }
 
 $order_data = array();
@@ -552,13 +592,23 @@ if (!empty($data['products'])) {
 
 $ref_source = (empty($_GET['src'])) ? '' : $_GET['src'];
 
-mysql_query('INSERT INTO requests (job_id, user_id, company_id, request_date, operating_sys, graphics_app, ref_source, other_source, processed_date, industry, conversations, complete_address, search_id, offers, order_data, tracking_number, search_keyword, user_ip, status) 
-    VALUES ("", ' . $user['id'] . ', "' . $comp_id . '", NOW(), "' . mysql_real_escape_string($data['os']) . '", "' . mysql_real_escape_string($data['app']) . '", "' . mysql_real_escape_string($data['ref']) . '", 
-        "' . mysql_real_escape_string($ref_source) . '", NULL, "' . mysql_real_escape_string($data['industry']) . '", "", "' . $completeaddress . '", "' . $searchid . '", "' . mysql_real_escape_string($data['offers']) . '", "' . mysql_real_escape_string(serialize($order_data)) . '", "", "' . $keywords . '", "' . mysql_real_escape_string($_SERVER['REMOTE_ADDR']) . '", "' . $req_status . '")');
+$result = mysqli_query($mysqli, 'INSERT INTO requests (job_id, user_id, company_id, request_date, operating_sys, graphics_app, ref_source, other_source, processed_date, industry, conversations, complete_address, search_id, offers, order_data, tracking_number, search_keyword, user_ip, status)
+    VALUES ("", ' . $user['id'] . ', "' . $comp_id . '", NOW(), "' . mysqli_real_escape_string($mysqli, isset($data['os']) ? $data['os'] : '') . '", "' . mysqli_real_escape_string($mysqli, isset($data['app']) ? $data['app'] : '') . '", "' . mysqli_real_escape_string($mysqli, isset($data['ref']) ? $data['ref'] : '') . '",
+        "' . mysqli_real_escape_string($mysqli, $ref_source) . '", NULL, "' . mysqli_real_escape_string($mysqli, $data['industry']) . '", "", "' . $completeaddress . '", "' . $searchid . '", "' . mysqli_real_escape_string($mysqli, isset($data['offers']) ? $data['offers'] : '') . '", "' . mysqli_real_escape_string($mysqli, serialize($order_data)) . '", "", "' . $keywords . '", "' . mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']) . '", "' . $req_status . '")');
 
-$id = mysql_insert_id();
+if (!$result) {
+    error_log("ERROR: Failed to insert request - " . mysqli_error($mysqli));
+    mysqli_close($mysqli);
+    response('error', 'Failed to save request');
+}
+
+$id = mysqli_insert_id($mysqli);
 //add event
-mysql_query('INSERT INTO events (date,`type`,`text`,type_id) VALUES (NOW(),"new_request","","' . $id . '")');
+$result = mysqli_query($mysqli, 'INSERT INTO events (date,`type`,`text`,type_id) VALUES (NOW(),"new_request","","' . $id . '")');
+if (!$result) {
+    error_log("WARNING: Failed to insert event - " . mysqli_error($mysqli));
+    // Non-critical, continue
+}
 
 
 $headers = "MIME-Version: 1.0\r\n";
@@ -588,8 +638,8 @@ if (mail("leads@imageteam.com", "InkRockit Printed Samples Request", $message, $
     $fname = $data['fname'];
     $company = $data['co'];
 
-    $comp_exist = mysql_query('SELECT val FROM settings WHERE `key`="request_email_template"');
-    $comp = mysql_fetch_array($comp_exist);
+    $comp_exist = mysqli_query($mysqli, 'SELECT val FROM settings WHERE `key`="request_email_template"');
+    $comp = mysqli_fetch_array($comp_exist);
     $message2 = $comp['val'];
     $message2 = str_replace(array('%name%', '%company%', "\'"), array(
         $fname,
@@ -639,5 +689,8 @@ if (mail("leads@imageteam.com", "InkRockit Printed Samples Request", $message, $
     $subject = "Hi " . $fname . ", welcome to InkRockit!";
     mail_attachment($my_file, $my_path, $data['email'], $subject, $message2);
 }
+
+// Close database connection
+mysqli_close($mysqli);
 
 response('success', 'Success');
