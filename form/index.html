@@ -1140,25 +1140,37 @@
         }
       },
       mounted() {
-        this.initGoogleMaps();
+        // Wait for Google Maps to be fully loaded
+        if (typeof google !== 'undefined' && google.maps) {
+          this.initGoogleMaps();
+        } else {
+          // Retry after a short delay
+          setTimeout(() => {
+            this.initGoogleMaps();
+          }, 500);
+        }
       },
       methods: {
         initGoogleMaps() {
-          if (typeof google === 'undefined' || !google.maps) {
-            console.warn('Google Maps API not loaded');
+          if (typeof google === 'undefined' || !google.maps || !google.maps.places) {
+            console.warn('Google Maps Places API not loaded');
             return;
           }
 
           const input = document.getElementById('autocomplete-address');
-          if (!input) return;
+          if (!input) {
+            console.warn('Autocomplete address input not found');
+            return;
+          }
 
-          this.autocomplete = new google.maps.places.Autocomplete(input, {
-            componentRestrictions: { country: ['us'] },
-            fields: ['address_components', 'geometry'],
-            types: ['address']
-          });
+          try {
+            this.autocomplete = new google.maps.places.Autocomplete(input, {
+              componentRestrictions: { country: ['us'] },
+              fields: ['address_components', 'geometry'],
+              types: ['address']
+            });
 
-          this.autocomplete.addListener('place_changed', () => {
+            this.autocomplete.addListener('place_changed', () => {
             const place = this.autocomplete.getPlace();
             if (!place.address_components) return;
 
@@ -1195,6 +1207,9 @@
               this.form.street = `${street_number} ${route}`.trim();
             }
           });
+          } catch (error) {
+            console.error('Error initializing Google Maps autocomplete:', error);
+          }
         },
 
         formatPhone(event) {
@@ -1236,6 +1251,14 @@
           this.submitError = '';
 
           try {
+            // Check if reCAPTCHA is ready
+            if (typeof grecaptcha === 'undefined') {
+              throw new Error('reCAPTCHA not loaded');
+            }
+
+            // Wait for reCAPTCHA to be ready
+            await grecaptcha.ready(() => {});
+
             // Get reCAPTCHA token
             const token = await grecaptcha.execute('6LdAWuEcAAAAAD1I94tiMcT6MYTmZ1Mk_0mVZRXT', { action: 'submit' });
 
@@ -1274,6 +1297,10 @@
               body: JSON.stringify(payload)
             });
 
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
             const result = await response.json();
 
             if (result.status === 'success') {
@@ -1285,7 +1312,13 @@
             }
           } catch (error) {
             console.error('Submit error:', error);
-            this.submitError = 'Network error. Please check your connection and try again.';
+            if (error.message && error.message.includes('reCAPTCHA')) {
+              this.submitError = 'Security verification failed. Please refresh the page and try again.';
+            } else if (error.message && error.message.includes('HTTP error')) {
+              this.submitError = 'Server error. Please try again later or contact support.';
+            } else {
+              this.submitError = 'Network error. Please check your connection and try again.';
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
           } finally {
             this.submitting = false;
