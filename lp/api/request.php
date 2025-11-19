@@ -592,20 +592,60 @@ if (!empty($data['products'])) {
 
 $ref_source = (empty($_GET['src'])) ? '' : $_GET['src'];
 
-// Base64 encode serialized data to prevent corruption from mysqli_real_escape_string
-$order_data_encoded = base64_encode(serialize($order_data));
+// Serialize order data - use prepared statement to prevent corruption
+$order_data_serialized = serialize($order_data);
 
-$result = mysqli_query($mysqli, 'INSERT INTO requests (job_id, user_id, company_id, request_date, operating_sys, graphics_app, ref_source, other_source, processed_date, industry, conversations, complete_address, search_id, offers, order_data, tracking_number, search_keyword, user_ip, status)
-    VALUES ("", ' . $user['id'] . ', "' . $comp_id . '", NOW(), "' . mysqli_real_escape_string($mysqli, isset($data['os']) ? $data['os'] : '') . '", "' . mysqli_real_escape_string($mysqli, isset($data['app']) ? $data['app'] : '') . '", "' . mysqli_real_escape_string($mysqli, isset($data['ref']) ? $data['ref'] : '') . '",
-        "' . mysqli_real_escape_string($mysqli, $ref_source) . '", NULL, "' . mysqli_real_escape_string($mysqli, $data['industry']) . '", "", "' . $completeaddress . '", "' . $searchid . '", "' . mysqli_real_escape_string($mysqli, isset($data['offers']) ? $data['offers'] : '') . '", "' . $order_data_encoded . '", "", "' . $keywords . '", "' . mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']) . '", "' . $req_status . '")');
+// Use prepared statement to safely insert serialized data without corruption
+$stmt = mysqli_prepare($mysqli, 'INSERT INTO requests (job_id, user_id, company_id, request_date, operating_sys, graphics_app, ref_source, other_source, processed_date, industry, conversations, complete_address, search_id, offers, order_data, tracking_number, search_keyword, user_ip, status)
+    VALUES ("", ?, ?, NOW(), ?, ?, ?, ?, NULL, ?, "", ?, ?, ?, ?, "", ?, ?, ?)');
+
+if (!$stmt) {
+    error_log("ERROR: Failed to prepare request statement - " . mysqli_error($mysqli));
+    mysqli_close($mysqli);
+    response('error', 'Database error');
+}
+
+$os = isset($data['os']) ? $data['os'] : '';
+$app = isset($data['app']) ? $data['app'] : '';
+$ref = isset($data['ref']) ? $data['ref'] : '';
+$offers = isset($data['offers']) ? $data['offers'] : '';
+$user_ip = $_SERVER['REMOTE_ADDR'];
+
+mysqli_stmt_bind_param($stmt, 'isssssssssssi',
+    $user['id'],
+    $comp_id,
+    $os,
+    $app,
+    $ref,
+    $ref_source,
+    $data['industry'],
+    $completeaddress,
+    $searchid,
+    $offers,
+    $order_data_serialized,
+    $keywords,
+    $user_ip,
+    $req_status
+);
+
+$result = mysqli_stmt_execute($stmt);
 
 if (!$result) {
-    error_log("ERROR: Failed to insert request - " . mysqli_error($mysqli));
+    error_log("ERROR: Failed to insert request - " . mysqli_stmt_error($stmt));
+    mysqli_stmt_close($stmt);
     mysqli_close($mysqli);
     response('error', 'Failed to save request');
 }
 
-$id = mysqli_insert_id($mysqli);
+$id = mysqli_stmt_insert_id($stmt);
+mysqli_stmt_close($stmt);
+
+if (!$id) {
+    error_log("ERROR: Failed to get insert ID for request");
+    mysqli_close($mysqli);
+    response('error', 'Failed to save request');
+}
+
 //add event
 $result = mysqli_query($mysqli, 'INSERT INTO events (date,`type`,`text`,type_id) VALUES (NOW(),"new_request","","' . $id . '")');
 if (!$result) {
